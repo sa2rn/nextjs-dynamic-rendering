@@ -1,0 +1,9 @@
+.root {
+  background-color: var(--bg);
+  padding: var(--padding);
+  margin-bottom: var(--gap);
+}
+
+.root:last-child {
+  margin-bottom: 0;
+}

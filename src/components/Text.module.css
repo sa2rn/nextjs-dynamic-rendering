@@ -1,0 +1,10 @@
+.root {
+  font-size: var(--font-size);
+  font-family: var(--font-family);
+  color: var(--color);
+  margin-bottom: var(--gap);
+}
+
+.root:last-child {
+  margin-bottom: 0;
+}
