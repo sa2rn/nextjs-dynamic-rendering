@@ -1,0 +1,26 @@
+:root {
+  --gap: 1rem;
+  --font-family: 'Roboto', sans-serif;
+  --font-size: 16px;
+  --font-weight: normal;
+  --line-height: 1.5;
+}
+
+.light {
+  --color: #000;
+  --bg: #fff;
+}
+
+.dark {
+  --color: #fff;
+  --bg: #000;
+}
+
+body {
+  background: var(--bg);
+  color: var(--color);
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  font-weight: var(--font-weight);
+  line-height: var(--line-height);
+}
