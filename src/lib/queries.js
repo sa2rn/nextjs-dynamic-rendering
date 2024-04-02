@@ -47,6 +47,20 @@ document example:
             },
             "text": "createElement lets you create a React element. It serves as an alternative to writing JSX."
           }
+        },
+        {
+          "type": "StyledLink",
+          "props": {
+            "href": "https://google.com",
+            "$borderRadius": "30px",
+            "$paddingX": "4px",
+            "$paddingY": "10px",
+            "$borderStyle": "solid",
+            "$borderWidth": "2px",
+            "$textDecoration": "none",
+            "target": "_blank"
+          },
+          "children": "Try to search with google"
         }
       ]
     }
