@@ -4,6 +4,7 @@
   --font-size: 16px;
   --font-weight: normal;
   --line-height: 1.5;
+  --font-style: normal;
 }
 
 .light {
@@ -23,4 +24,9 @@ body {
   font-size: var(--font-size);
   font-weight: var(--font-weight);
   line-height: var(--line-height);
+  font-style: var(--font-style);
+
+  max-width: 800px;
+  padding: 10px;
+  margin: 0 auto;
 }
