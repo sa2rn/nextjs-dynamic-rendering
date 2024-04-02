@@ -17,9 +17,6 @@ export default async function Page({ params }) {
 }
 
 export async function generateMetadata({ params }) {
-  const page = await getPage(params.slug);
-  return {
-    title: page.title,
-    description: page.description,
-  };
+  const { seo } = await getPage(params.slug);
+  return seo;
 }
