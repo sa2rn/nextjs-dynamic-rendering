@@ -56,6 +56,7 @@ document example:
 */
 export const getPageBySlug = cache(async (slug) => {
   const page = await db.collection('pages').findOne({ slug });
+  console.log('getPageBySlug', slug);
   if (!page) notFound();
   return page;
 });

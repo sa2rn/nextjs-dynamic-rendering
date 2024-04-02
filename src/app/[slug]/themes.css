@@ -5,16 +5,19 @@
   --font-weight: normal;
   --line-height: 1.5;
   --font-style: normal;
+  --link-decoration: underline;
 }
 
 .light {
   --color: #000;
   --bg: #fff;
+  --link-color: #0070f3;
 }
 
 .dark {
   --color: #fff;
   --bg: #000;
+  --link-color: #0070f3;
 }
 
 body {
