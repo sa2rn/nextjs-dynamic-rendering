@@ -1,6 +1,6 @@
 import { cache } from 'react';
 import { notFound } from 'next/navigation';
-import { getPageBySlug } from '@/lib/db';
+import { getPageBySlug, getPages } from '@/lib/db';
 import renderer from '@/lib/renderer';
 
 const getPage = cache(async (slug) => {
@@ -19,4 +19,10 @@ export default async function Page({ params }) {
 export async function generateMetadata({ params }) {
   const { seo } = await getPage(params.slug);
   return seo;
+}
+
+// Only when you need to generate static pages
+export async function generateStaticParams() {
+  const pages = await getPages();
+  return pages.map(({ slug }) => ({ slug }));
 }
