@@ -1,13 +1,20 @@
 import { createElement } from 'react';
-import * as blocks from './blocks';
 
-export default function renderer(block) {
-  if (!block) return null;
-  if (Array.isArray(block)) return block.map(renderer);
-  if (typeof block === 'string') return block;
+export default class Renderer {
+  #components;
 
-  const component = blocks[block.type];
-  if (!component) throw new Error(`Unknown component: ${block.type}`);
+  constructor(components) {
+    this.#components = components;
+  }
 
-  return createElement(component, block.props, ...[renderer(block.children)].flat());
+  render(block) {
+    if (!block) return null;
+    if (Array.isArray(block)) return block.map(this.render.bind(this));
+    if (typeof block === 'string') return block;
+  
+    const component = this.#components[block.type];
+    if (!component) throw new Error(`Unknown component: ${block.type}`);
+  
+    return createElement(component, block.props, ...[this.render(block.children)].flat());
+  }
 }

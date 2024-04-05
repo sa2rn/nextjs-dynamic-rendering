@@ -15,4 +15,5 @@ export default styled.a`
   border-style: ${(props) => props.$borderStyle || 'none'};
   border-color: ${(props) => props.$borderColor || 'var(--link-color)'};
   border-radius: ${(props) => props.$borderRadius || '0'};
+  cursor: pointer;
 `;
