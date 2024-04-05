@@ -1,5 +1,5 @@
 import { getPageBySlug, getPages } from '@/lib/queries';
-import renderer from '@/lib/renderer';
+import renderer from 'renderer';
 
 export default async function Page({ params }) {
   const page = await getPageBySlug(params.slug);

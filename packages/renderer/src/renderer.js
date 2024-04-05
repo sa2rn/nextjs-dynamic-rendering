@@ -1,5 +1,5 @@
 import { createElement } from 'react';
-import * as blocks from '@/blocks';
+import * as blocks from './blocks';
 
 export default function renderer(block) {
   if (!block) return null;
