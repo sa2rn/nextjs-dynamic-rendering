@@ -1,9 +1,9 @@
-import { getPageBySlug } from '@/lib/queries';
+import api from '@/lib/api';
 import './themes.css';
 
 export async function generateMetadata({ params }) {
-  const { seo } = await getPageBySlug(params.slug);
-  return seo;
+  const { metadata } = await api.pages.getBySlug(params.slug);
+  return metadata;
 }
 
 export const viewport = {
@@ -11,7 +11,7 @@ export const viewport = {
 };
 
 export default async function PageLayout({ children, params }) {
-  const { theme, tokens } = await getPageBySlug(params.slug);
+  const { theme, tokens } = await api.pages.getBySlug(params.slug);
 
   return (
     <body className={theme} style={tokens}>
