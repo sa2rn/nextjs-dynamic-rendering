@@ -1,4 +1,4 @@
-import { createElement } from 'react';
+import { jsx, jsxs, Fragment } from 'react/jsx-runtime';
 
 export default class Renderer {
   #components;
@@ -9,12 +9,13 @@ export default class Renderer {
 
   render(block) {
     if (!block) return null;
-    if (Array.isArray(block)) return block.map(this.render.bind(this));
+    if (Array.isArray(block)) return jsxs(Fragment, { children: block.map(this.render.bind(this)) });
     if (typeof block === 'string') return block;
   
     const component = this.#components[block.type];
     if (!component) throw new Error(`Unknown component: ${block.type}`);
   
-    return createElement(component, block.props, ...[this.render(block.children)].flat());
+    const { children, ...props } = block.props || {};
+    return jsx(component, { ...props, children: this.render(children) });
   }
 }
