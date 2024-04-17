@@ -9,22 +9,25 @@
     "./docs.json": "./dist/docs.json"
   },
   "scripts": {
-    "build": "rimraf dist && babel src -d dist --copy-files && react-docgen src/blocks/*.js -o dist/docs.json --pretty"
+    "build": "rimraf dist && babel src -d dist --copy-files"
   },
   "devDependencies": {
     "@babel/cli": "^7.24.1",
     "@babel/core": "^7.24.4",
     "@babel/preset-env": "^7.24.4",
     "@babel/preset-react": "^7.24.1",
-    "@react-docgen/cli": "^2.0.3",
+    "@types/react": "^18.2.74",
+    "@types/react-dom": "^18.2.24",
     "babel-plugin-styled-components": "^2.1.4",
     "react": "^18",
     "react-dom": "^18",
-    "rimraf": "^5.0.5"
+    "rimraf": "^5.0.5",
+    "styled-components": "^6.1.8"
   },
   "peerDependencies": {
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "styled-components": "^6.1.8"
   },
   "browserslist": [
     "defaults and fully supports es6-module",
